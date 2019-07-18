@@ -14,6 +14,7 @@ import { ArticleService } from './service/article.service';
 import { GestionArticleComponent } from './gestion-article/gestion-article.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
+import { CategorieComponent } from './categorie/categorie.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AjouterArticleComponent } from './ajouter-article/ajouter-article.compo
     DirectiveListeDirective,
     GestionArticleComponent,
     AccueilComponent,
-    AjouterArticleComponent
+    AjouterArticleComponent,
+    CategorieComponent
   ],
   imports: [
     BrowserModule,
