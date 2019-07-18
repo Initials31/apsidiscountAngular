@@ -69,7 +69,7 @@ export class Widget1Component implements OnInit {
 
   selectArticle(art: Article){
     console.log('selectArticle : id =' + art.id);
-    let link=['/gestionArticle', {outlets: {'detail': [art.id]}}];
+    let link=['/gestionArticle', {outlets: {'liste': [art.id]}}];
     this.router.navigate(link);
 
   }

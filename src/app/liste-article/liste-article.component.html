@@ -1,36 +1,22 @@
-<button (click)="afficherStock0()">Afficher que les stock</button>
-<button (click)="afficherTout()">Afficher tout</button>
-<button (click)="afficherRien()">Rien afficher</button>
-
-<table class="zebre" *ngIf='listeArticleBis'>
-  <thead>
-    <tr>
-      <th>Identification</th>
-      <th>Categorie</th>
-      <th>Constructeur</th>
-      <th>Photo</th>
-      <th>Designation</th>
-      <th>Description</th>
-      <th>Prix</th>
-      <th>Stock</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor='let prout of listeArticleBis'>
-      <td class="transclass">{{prout.identifiant}}</td>
-      <td class="transclass">{{prout.categorie.nom}}</td>
-      <td class="transclass">{{prout.constructeur.nom}}</td>
-      <td class="transclass"><img [src]=prout.image style="width: 50px;" /></td>
-      <td class="transclass">{{prout.designation}}</td>
-      <td class="transclass">{{prout.description}}</td>
-      <td class="transclass">{{prout.prix}}</td>
-      <td class="transclass" [appDirectiveListe]=prout.stock>{{prout.stock}}</td>
-    </tr>
-  </tbody>
-</table>
-
-<div *ngIf='!listeArticleBis'>
-  <p>{{message}}</p>
+<div class='container'>
+  <div class="row">
+    <div class="col s1 m5">
+      <div class="card">
+        <div class="card-image">
+          <img [src]=article.image/>
+        </div>
+        <div class="card-content" [align]=alignement>
+          {{article.id}}<br>
+          {{article.designation}}<br>
+          {{article.dateMiseEnLigne}}<br>
+          {{article.categorie.nom}}<br>
+          {{article.constructeur.nom}}<br>
+          {{article.description}}<br>
+          {{article.prix}} €<br>
+          {{article.stock}}<br>
+        </div>
+        <a class="myButton" routerLink="/widget1" routerLinkActive="active">Liste des articles</a>
+      </div>
+    </div>
+  </div>
 </div>
-
-<!-- <app-detail-article *ngFor='let art of listeArticleBis' [article]=art></app-detail-article> -->

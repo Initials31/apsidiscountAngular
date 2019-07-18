@@ -14,8 +14,12 @@ const appRoutes: Routes = [
       { path: '', component: Widget1Component, outlet: 'widget1' },
       { path: ':id', component: DetailArticleComponent, outlet: 'detail' }]
     },
+    { path : 'gestionArticle', component : GestionArticleComponent,
+    children: [
+      { path: '', component: Widget1Component, outlet: 'widget1' },
+      { path: ':id', component: ListeArticleComponent, outlet: 'liste' }]
+    },
     { path: 'ajouter-article', component: AjouterArticleComponent},
-    { path : 'liste-article', component : ListeArticleComponent},
     { path : 'widget1', component : Widget1Component },
     { path : 'detail-article', component : DetailArticleComponent},
     { path : '', component : AccueilComponent},
