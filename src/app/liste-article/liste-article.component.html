@@ -1,11 +1,6 @@
 <button (click)="afficherStock0()">Afficher que les stock</button>
 <button (click)="afficherTout()">Afficher tout</button>
 <button (click)="afficherRien()">Rien afficher</button>
-<div>
-  Quel identifiant ? : <span class="afficherId"><input type="number" [(ngModel)]=identifiant></span>
-  <button (click)="affficherById()">Rechercher</button>
-</div>
-
 
 <table class="zebre" *ngIf='listeArticleBis'>
   <thead>
@@ -23,8 +18,8 @@
   <tbody>
     <tr *ngFor='let prout of listeArticleBis'>
       <td class="transclass">{{prout.identifiant}}</td>
-      <td class="transclass">{{prout.categorie}}</td>
-      <td class="transclass">{{prout.constructeur}}</td>
+      <td class="transclass">{{prout.categorie.nom}}</td>
+      <td class="transclass">{{prout.constructeur.nom}}</td>
       <td class="transclass"><img [src]=prout.image style="width: 50px;" /></td>
       <td class="transclass">{{prout.designation}}</td>
       <td class="transclass">{{prout.description}}</td>

@@ -20,41 +20,22 @@ export class ArticleService {
   constructor(private http: HttpClient) { }
 
   getAllArticlesJson(): Observable<Article[]> {
-    return this.http.get<Article[]>(`${this.baseURL}/articles`, this.httpOptions);
+    return this.http.get<Article[]>(`${this.baseURL}/article`, this.httpOptions);
   }
-
-  // getAllArticle() : Observable<Article> {
-  //   return from(ARTICLES);
-  // }
 
   getArticleByIdJson(id: number): Observable<Article> {
-    return this.http.get<Article>(`${this.baseURL}/articles/${id}`, this.httpOptions);
+    return this.http.get<Article>(`${this.baseURL}/article/${id}`, this.httpOptions);
   }
-
-  // getArticleById(identifiant: number): Observable<Article> {
-  //   let $monObservable = this.getAllArticle().pipe (
-  //     filter(art => art.id === identifiant)
-  //   );
-  //   return $monObservable;
-  // }
-
 
   getOnlyStockJson(): Observable<Article[]> {
     return this.getAllArticlesJson().pipe(map(tabart => tabart.filter(art => art.stock > 0)));
   }
 
-  // getOnlyStock(): Observable<Article> {
-  //   let $monObservable = this.getAllArticleJson().pipe (
-  //     filter(art => art.stock > 0)
-  //   );
-  //   return $monObservable;
-  // }
-
   supprimerArticleJson(id: number): Observable<Article> {
-    return this.http.delete<Article>(`${this.baseURL}/articles/${id}`,this.httpOptions);
+    return this.http.delete<Article>(`${this.baseURL}/article/${id}`,this.httpOptions);
   }
 
   addArticleJson(article: Article): Observable<Article>{
-    return this.http.post<Article>(`${this.baseURL}/articles`, article, this.httpOptions);
+    return this.http.post<Article>(`${this.baseURL}/article`, article, this.httpOptions);
   }
 }

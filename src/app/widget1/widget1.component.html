@@ -27,21 +27,15 @@
 
         <div><img class="image" [src]=prout2.image></div>
 
-        <a [href]="prout2.url" target="_blank"><button (click)="lien()"
-            class="cons">{{prout2.constructeur}}</button></a>
+        <!-- <a [href]="prout2.url" target="_blank"><button (click)="lien()"
+            class="cons">{{prout2.constructeur.nom}}</button></a> -->
 
-        <div class="cat">{{prout2.categorie}}</div>
+        <div class="cons">{{prout2.constructeur.nom}}</div>
 
-        <div>{{prout2.description}}</div>
+        <div class="cat">{{prout2.categorie.nom}}</div>
 
         <div>Achat immédiat : <strong>{{prout2.prix}}€</strong></div>
 
-        <div>Stock disponible : <strong>{{prout2.stock}}</strong></div>
-
-        <button (click)="ajouterPanier()" class="transclass"><img src="assets/images/materiel/panier.png"></button>
-        <button (click)="retirerPanier()" class="transclass"><img src="assets/images/materiel/panier2.png"></button>
-        <button (click)="mettreFavori()" class="transclass"><img src="assets/images/materiel/sauvegarder.png"></button>
-        <button (click)="retirerFavori()" class="transclass"><img src="assets/images/materiel/sauvegarder2.png"></button>
       </div>
     </div>
   </div>
