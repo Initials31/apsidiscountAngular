@@ -1,0 +1,11 @@
+.action {
+    cursor: pointer;
+}
+
+.action:hover {
+    color: red;
+}
+
+.action:active {
+    color:green;
+}

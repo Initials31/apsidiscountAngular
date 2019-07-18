@@ -1,0 +1,33 @@
+.zebre tbody tr:nth-child(odd) {background-color: beige}
+.zebre tbody tr:nth-child(even) {background-color:gray}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+tbody tr td {
+    border-top:2px solid #ff0000;
+    border-right:3px solid #000000;
+    border-bottom:2px solid #ff0000;
+    border-left:3px solid #000000;
+}
+
+thead tr {
+    border-top:3px solid #000000;
+    border-right:3px solid #000000;
+    border-left:3px solid #000000;
+}
+
+.transclass{
+    transform:matrix(1,0,0,1,0,0);
+    transition:transform 0.5s ease 0s;
+    }
+    
+.transclass:hover{
+transform:matrix(-1,0,0,1,0,0);
+}
+
+.afficherId {
+    border : 2px black solid;
+}

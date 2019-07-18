@@ -1,0 +1,41 @@
+<button (click)="afficherStock0()">Afficher que les stock</button>
+<button (click)="afficherTout()">Afficher tout</button>
+<button (click)="afficherRien()">Rien afficher</button>
+<div>
+  Quel identifiant ? : <span class="afficherId"><input type="number" [(ngModel)]=identifiant></span>
+  <button (click)="affficherById()">Rechercher</button>
+</div>
+
+
+<table class="zebre" *ngIf='listeArticleBis'>
+  <thead>
+    <tr>
+      <th>Identification</th>
+      <th>Categorie</th>
+      <th>Constructeur</th>
+      <th>Photo</th>
+      <th>Designation</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let prout of listeArticleBis'>
+      <td class="transclass">{{prout.identifiant}}</td>
+      <td class="transclass">{{prout.categorie}}</td>
+      <td class="transclass">{{prout.constructeur}}</td>
+      <td class="transclass"><img [src]=prout.image style="width: 50px;" /></td>
+      <td class="transclass">{{prout.designation}}</td>
+      <td class="transclass">{{prout.description}}</td>
+      <td class="transclass">{{prout.prix}}</td>
+      <td class="transclass" [appDirectiveListe]=prout.stock>{{prout.stock}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf='!listeArticleBis'>
+  <p>{{message}}</p>
+</div>
+
+<!-- <app-detail-article *ngFor='let art of listeArticleBis' [article]=art></app-detail-article> -->

@@ -1,0 +1,72 @@
+<div>
+    <form class="col s12" [formGroup]="articleForm" (ngSubmit)="onSubmit(userForm.value)" #userForm="ngForm">
+        <div class=" row">
+            <div class="input-field col s6">
+                <input id="designation" type="text" name="designation" [formControl]="designation" />
+                <label for="designation">Designation</label>
+                <div *ngIf="designation.dirty && !designation.valid">
+                    <p *ngIf="designation.errors.required">La designation est obligatoire</p>
+                    <p *ngIf="designation.errors.maxlength">15 caractères max</p>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input id="constructeur" type="text" name="constructeur" [formControl]="constructeur">
+                <label for="constructeur">Constructeur</label>
+                <div *ngIf="constructeur.dirty && !constructeur.valid">
+                    <p *ngIf="constructeur.errors.required">Le constructeur est obligatoire</p>
+                    <p *ngIf="constructeur.errors.maxlength">15 caractères max</p>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input id="categorie" type="text" name="categorie" [formControl]="categorie" />
+                <label for="categorie">Categorie</label>
+                <div *ngIf="categorie.dirty && !categorie.valid">
+                    <p *ngIf="categorie.errors.required">La categorie est obligatoire</p>
+                    <p *ngIf="categorie.errors.maxlength">15 caractères max</p>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input id="dateMiseEnLigne" type="date" name="dateMiseEnLigne" [formControl]="dateMiseEnLigne" />
+                <label for="dateMiseEnLigne">Date de mise en ligne</label>
+                <div *ngIf="dateMiseEnLigne.dirty && !dateMiseEnLigne.valid">
+                    <p *ngIf="dateMiseEnLigne.errors.required">La date de mise en ligne est obligatoire</p>
+                    <p *ngIf="!dateMiseEnLigne.errors.sortieAjd">La date d'ajout ne doit pas être dans le futur</p>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                    <input id="image" type="text" name="image" [formControl]="image" />
+                    <label for="image">Image</label>
+                    <div *ngIf="image.dirty && !image.valid">
+                        <p *ngIf="image.errors.required">L'image est obligatoire</p>
+                        <p *ngIf="image.errors.maxlength">15 caractères max</p>
+                    </div>
+                </div>
+            <div class="input-field col s6">
+                <input id="description" type="text" name="description" [formControl]="description" />
+                <label for="description">Description</label>
+                <div *ngIf="description.dirty && !description.valid">
+                    <p *ngIf="description.errors.required">La description est obligatoire</p>
+                    <p *ngIf="description.errors.maxlength">250 caractères max</p>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input id="stock" type="number" name="stock" [formControl]="stock" />
+                <label for="stock">Stock</label>
+                <div *ngIf="stock.dirty && !stock.valid">
+                    <p *ngIf="stock.errors.required">Le stock est obligatoire</p>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input id="prix" type="number" name="prix" [formControl]="prix" />
+                <label for="prix">Prix</label>
+                <div *ngIf="prix.dirty && !prix.valid">
+                    <p *ngIf="prix.errors.required">Le prix est obligatoire</p>
+                </div>
+            </div>
+            <div>
+                <input class="btn waves-effect waves-light" type="submit" value="PUTACLIC"
+                    [disabled]="!articleForm.valid" />
+            </div>
+        </div>
+    </form>
+</div>

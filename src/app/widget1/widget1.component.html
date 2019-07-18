@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- <app-navbar></app-navbar> -->
+
+<button (click)="afficherStock0()">Afficher que les stock</button>
+<button (click)="afficherTout()">Afficher tout</button>
+<button (click)="afficherRien()">Rien afficher</button>
+
+{{ message }}
+
+  <div class="widget">
+    <div *ngFor='let prout2 of widget1'>
+      <div class="widget1">
+        <div>
+          <h1><span (click)="selectArticle(prout2)" class="animation">{{prout2.designation}}</span></h1>
+        </div>
+
+        <div><i class='fas fa-trash-alt action' style='font-size:24px' (click)="supprimerArticle(prout2.id)"></i></div>
+
+        <div>{{ prout2.dateMiseEnLigne | date }}</div>
+
+        <div><img class="image" [src]=prout2.image></div>
+
+        <a [href]="prout2.url" target="_blank"><button (click)="lien()"
+            class="cons">{{prout2.constructeur}}</button></a>
+
+        <div class="cat">{{prout2.categorie}}</div>
+
+        <div>{{prout2.description}}</div>
+
+        <div>Achat immédiat : <strong>{{prout2.prix}}€</strong></div>
+
+        <div>Stock disponible : <strong>{{prout2.stock}}</strong></div>
+
+        <button (click)="ajouterPanier()" class="transclass"><img src="assets/images/materiel/panier.png"></button>
+        <button (click)="retirerPanier()" class="transclass"><img src="assets/images/materiel/panier2.png"></button>
+        <button (click)="mettreFavori()" class="transclass"><img src="assets/images/materiel/sauvegarder.png"></button>
+        <button (click)="retirerFavori()" class="transclass"><img src="assets/images/materiel/sauvegarder2.png"></button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
