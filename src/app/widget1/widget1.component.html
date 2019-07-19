@@ -20,7 +20,7 @@
       <button (click)="afficherCategories()" class="boutonmenuprincipal">Liste des Categories</button>
       <div class="dropdown-child" *ngFor='let prout3 of cat'>
       <ul>
-          <li><button>{{prout3.nom}}</button></li>
+          <li><button (click)="selectCategorie(prout3)">{{prout3.nom}}</button></li>
       </ul>
       </div>
       </div>

@@ -90,4 +90,11 @@ export class Widget1Component implements OnInit {
     this.router.navigate(link);
 
   }
+
+  selectCategorie(categorie : Categorie){
+    console.log('selectArticle2 : id =' + categorie.id);
+    let link=['/gestionArticle', {outlets: {'liste': [categorie.id]}}];
+    this.router.navigate(link);
+
+  }
 }
