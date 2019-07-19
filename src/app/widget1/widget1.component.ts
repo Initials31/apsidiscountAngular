@@ -67,9 +67,9 @@ export class Widget1Component implements OnInit {
     err => this.message = 'Erreur lors de la suppression'
   }
 
-  selectArticle(art: Article){
-    console.log('selectArticle : id =' + art.id);
-    let link=['/gestionArticle', {outlets: {'liste': [art.id]}}];
+  selectArticle(article : Article){
+    console.log('selectArticle : id =' + article.id);
+    let link=['/gestionArticle', {outlets: {'liste': [article.id]}}];
     this.router.navigate(link);
 
   }
