@@ -1,10 +1,13 @@
+import { Categorie } from '../categorie/categorie';
+import { Constructeur } from '../constructeur/constructeur';
+
 export class Article {
 
     constructor(
         public id: number,
         public designation: string,
-        public constructeur: string,
-        public categorie: string,
+        public constructeur: Constructeur,
+        public categorie : Categorie,
         public dateMiseEnLigne: Date,
         public image: string,
         public description: string,

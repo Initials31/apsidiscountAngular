@@ -14,7 +14,7 @@ import { ArticleService } from './service/article.service';
 import { GestionArticleComponent } from './gestion-article/gestion-article.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
-import { CategorieComponent } from './categorie/categorie.component';
+import { CategorieComponent } from './liste-categorie/categorie.component';
 import { LoginComponent } from './login/login.component';
 
 

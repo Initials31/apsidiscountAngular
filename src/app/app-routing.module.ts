@@ -8,7 +8,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
 import { ListeArticleComponent } from './liste-article/liste-article.component';
 import { LoginComponent } from './login/login.component';
-import { CategorieComponent } from './categorie/categorie.component';
+import { CategorieComponent } from './liste-categorie/categorie.component';
 
 const appRoutes: Routes = [
     { path : 'gestionArticle', component : GestionArticleComponent,
