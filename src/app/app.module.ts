@@ -15,6 +15,7 @@ import { GestionArticleComponent } from './gestion-article/gestion-article.compo
 import { AccueilComponent } from './accueil/accueil.component';
 import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
 import { CategorieComponent } from './categorie/categorie.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CategorieComponent } from './categorie/categorie.component';
     GestionArticleComponent,
     AccueilComponent,
     AjouterArticleComponent,
-    CategorieComponent
+    CategorieComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

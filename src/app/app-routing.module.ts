@@ -7,6 +7,8 @@ import { GestionArticleComponent } from './gestion-article/gestion-article.compo
 import { AccueilComponent } from './accueil/accueil.component';
 import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
 import { ListeArticleComponent } from './liste-article/liste-article.component';
+import { LoginComponent } from './login/login.component';
+import { CategorieComponent } from './categorie/categorie.component';
 
 const appRoutes: Routes = [
     { path : 'gestionArticle', component : GestionArticleComponent,
@@ -19,6 +21,8 @@ const appRoutes: Routes = [
       { path: '', component: ListeArticleComponent, outlet: 'liste' },
       { path: ':id', component: ListeArticleComponent, outlet: 'liste' }]
     },
+    { path: 'login', component: LoginComponent},
+    { path: 'categorie', component: CategorieComponent},
     { path: 'ajouter-article', component: AjouterArticleComponent},
     { path : 'widget1', component : Widget1Component },
     { path : 'detail-article', component : DetailArticleComponent},
