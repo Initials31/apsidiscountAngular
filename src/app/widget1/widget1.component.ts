@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Article } from '../article/article';
 import { ArticleService } from '../service/article.service';
 import { Router } from '@angular/router';
+import { CategorieService } from '../service/categorie.service';
+import { Categorie } from '../categorie/categorie';
 
 @Component({
   selector: 'app-widget1',
@@ -10,16 +12,17 @@ import { Router } from '@angular/router';
 })
 export class Widget1Component implements OnInit {
 
-  widget1: Article[];
+  art: Article[];
+  cat : Categorie[];
   message: string;
   stockSelected: number;
   typeListe: number;
 
-  constructor(private router: Router, private serviceArticle: ArticleService) { }
+  constructor(private router: Router, private serviceArticle: ArticleService, private serviceCategorie : CategorieService) { }
 
   ngOnInit() {
     this.serviceArticle.getAllArticlesJson().subscribe(art => {
-      this.widget1 = art;
+      this.art = art;
     }
     );
     this.stockSelected = 0;
@@ -27,31 +30,45 @@ export class Widget1Component implements OnInit {
 
   private listerArticles() {
     this.serviceArticle.getAllArticlesJson().subscribe(data => {
-      this.widget1 = data;
+      this.art = data;
     });
   }
 
+  private listerCategorie() {
+    this.serviceCategorie.getAllCategoriesJson().subscribe(data => {
+      this.cat=data;
+    })
+  }
+
   afficherStock0() {
-    this.widget1= [];
+    this.art= [];
     this.typeListe = 2;
     this.serviceArticle.getOnlyStockJson().subscribe(stck => {
-      this.widget1 = stck;
+      this.art = stck;
     });
     this.message = '';
   }
 
   afficherTout() {
-    this.widget1 = [];
+    this.art = [];
     this.typeListe = 1;
     this.serviceArticle.getAllArticlesJson().subscribe(art => {
-      this.widget1 = art;
+      this.art = art;
       this.listerArticles;
     });
     this.message = '';
   }
 
+  afficherCategories() {
+    this.cat = [];
+    this.serviceCategorie.getAllCategoriesJson().subscribe(cat => {
+      this.cat = cat;
+      this.listerCategorie;
+    })
+  }
+
   afficherRien() {
-    this.widget1 = null;
+    this.art = null;
     this.message = 'Pas d\'article dans la liste';
   }
 
@@ -61,7 +78,7 @@ export class Widget1Component implements OnInit {
         switch (this.typeListe) {
           case 1: this.afficherTout();
           case 2: this.afficherStock0();
-          default: this.widget1 = null;
+          default: this.art = null;
         }},
     );       
     err => this.message = 'Erreur lors de la suppression'

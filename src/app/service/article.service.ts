@@ -3,6 +3,7 @@ import { Article } from '../article/article';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Categorie } from '../categorie/categorie';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +39,5 @@ export class ArticleService {
   addArticleJson(article: Article): Observable<Article>{
     return this.http.post<Article>(`${this.baseURL}/article`, article, this.httpOptions);
   }
+
 }

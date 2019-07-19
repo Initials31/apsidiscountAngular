@@ -14,11 +14,23 @@
 
 {{ message }}
 
+<br>
+
+  <div class="dropdown">
+      <button (click)="afficherCategories()" class="boutonmenuprincipal">Liste des Categories</button>
+      <div class="dropdown-child" *ngFor='let prout3 of cat'>
+      <ul>
+          <li><button>{{prout3.nom}}</button></li>
+      </ul>
+      </div>
+      </div>
+
+
   <div class="widget">
-    <div *ngFor='let prout2 of widget1'>
-      <div class="widget1">
+    <div *ngFor='let prout2 of art'>
+      <div class="widget1" (click)="selectArticle(prout2)">
         <div>
-          <h1><span (click)="selectArticle(prout2)" class="animation">{{prout2.designation}}</span></h1>
+          <h1><span class="animation">{{prout2.designation}}</span></h1>
         </div>
 
         <div><i class='fas fa-trash-alt action' style='font-size:24px' (click)="supprimerArticle(prout2.id)"></i></div>
@@ -35,8 +47,6 @@
       </div>
     </div>
   </div>
-
 </body>
-
 </html>
 
