@@ -64,7 +64,7 @@ export class Widget1Component implements OnInit {
     this.serviceCategorie.getAllCategoriesJson().subscribe(cat => {
       this.cat = cat;
       this.listerCategorie;
-    })
+    });
   }
 
   afficherRien() {
@@ -91,10 +91,9 @@ export class Widget1Component implements OnInit {
 
   }
 
-  selectCategorie(categorie : Categorie){
-    console.log('selectArticle2 : id =' + categorie.id);
-    let link=['/gestionArticle', {outlets: {'liste': [categorie.id]}}];
-    this.router.navigate(link);
-
+  selectArticleByCategorieId(id: number){
+    this.serviceArticle.getArticleByCategorieId(id).subscribe(data => {
+      this.art =data;
+    });
   }
 }

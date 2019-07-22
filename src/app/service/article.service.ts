@@ -40,8 +40,8 @@ export class ArticleService {
     return this.http.post<Article>(`${this.baseURL}/article`, article, this.httpOptions);
   }
 
-  getArticleByCategorieId (id: number): Observable<Article> {
-    return this.http.get<Article>(`${this.baseURL}/article/categorie/{id}`, this.httpOptions);
+  getArticleByCategorieId (id: number): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.baseURL}/article/categorie/${id}`, this.httpOptions);
   }
 
 }
