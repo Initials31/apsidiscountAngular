@@ -7,6 +7,11 @@
   width : 900px;
   }
 
+  .card-image {
+    padding-top: 12%;
+  }
+
+
   .myButton {
     -moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
     -webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -28,11 +33,12 @@
     font-family:Arial;
     font-size:15px;
     font-weight:bold;
-    padding:11px 23px;
+    padding:11px 11px;
     text-decoration:none;
     text-shadow:0px -1px 0px #2b665e;
     text-align : center;
-    padding-top : 120px;
+    height: auto;
+    padding-top: 20%;
   }
   .myButton:hover {
     background:-webkit-linear-gradientgradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));

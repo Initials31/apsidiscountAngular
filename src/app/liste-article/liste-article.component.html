@@ -5,15 +5,14 @@
         <div class="card-image">
           <img [src]=article.image/>
         </div>
-        <div class="card-content" [align]=alignement>
-          {{article.id}}<br>
+        <div class="card-content" [align]=justify>
           {{article.designation}}<br>
           {{article.dateMiseEnLigne}}<br>
-          {{article.categorie.nom}}<br>
-          {{article.constructeur.nom}}<br>
-          {{article.description}}<br>
-          {{article.prix}} €<br>
-          {{article.stock}}<br>
+          {{article.categorie.nom}}<br><br>
+          <strong>{{article.constructeur.nom}}</strong><br><br>
+          {{article.description}}<br><br>
+          {{article.prix}} €<br><br>
+          {{article.stock}}<br><br>
           <input class="rafraichir" type="button" (click)="selectArticleByCategorieId(article.id)" value="Mettre à jour les données"/><br>
         </div>
         <a class="myButton" routerLink="/widget1" routerLinkActive="active">Liste des articles</a>

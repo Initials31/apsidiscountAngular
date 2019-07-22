@@ -3,15 +3,17 @@
     margin-left: auto;
     margin-right : auto;
     justify-content: center;
-    width : 700px;
+    width : 500px;
 }
 
 .widget1 {
+    display: inline-flexbox;
     border-width:2px;
     border-style:solid;
     border-radius: 10px;
     border-color:#f5f5ef;
     text-align: center;
+    align-content: center;
     line-height: 25px;
     background-color: whitesmoke;
     margin: 30px;
@@ -235,4 +237,11 @@ body div h1 {
     float: left;
     text-align: center;
     color: white;
+    position: fixed;
+    margin-top: 30px;
+}
+
+.position {
+    position: fixed;
+    margin-top: 20px;
 }
