@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ListeArticleComponent implements OnInit {
 
   @Input() article: Article;
+  art : Article[];
 
   constructor(private route : ActivatedRoute, private serviceArticle : ArticleService) { }
 
@@ -18,6 +19,13 @@ export class ListeArticleComponent implements OnInit {
     this.route.paramMap.subscribe(param => {
       let id = parseInt(param.get('id'));
       this.serviceArticle.getArticleByIdJson(id).subscribe(data => this.article = data);
+    });
+  }
+
+  selectArticleByCategorieId(id: number){
+    console.log("l'id de l'article sélectionné est : " + id);
+    this.serviceArticle.getArticleByCategorieId(id).subscribe(data => {
+      this.art =data;
     });
   }
 }

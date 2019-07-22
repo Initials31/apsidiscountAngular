@@ -14,7 +14,7 @@
           {{article.description}}<br>
           {{article.prix}} €<br>
           {{article.stock}}<br>
-          <input type="button" onclick="javascript:window.location.reload()" value="Rafraichir"/><br>
+          <input class="rafraichir" type="button" (click)="selectArticleByCategorieId(article.id)" value="Mettre à jour les données"/><br>
         </div>
         <a class="myButton" routerLink="/widget1" routerLinkActive="active">Liste des articles</a>
       </div>

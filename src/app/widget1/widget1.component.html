@@ -8,22 +8,23 @@
 <body>
     <!-- <app-navbar></app-navbar> -->
 
-<button (click)="afficherStock0()">Afficher que les stock</button>
-<button (click)="afficherTout()">Afficher tout</button>
-<button (click)="afficherRien()">Rien afficher</button>
+<!-- <button (click)="afficherStock0()">Afficher que les stock</button> -->
+<button class="affichertout" (click)="afficherTout()">Afficher toutes les catégories</button>
+<!-- <button (click)="afficherRien()">Rien afficher</button> -->
 
 {{ message }}
 
 <br>
 
   <div class="dropdown">
-      <button (click)="afficherCategories()" class="boutonmenuprincipal">Liste des Categories</button>
+      <button (click)="afficherCategories()" class="boutonmenuprincipal">Choisir une catégorie...</button>
       <div class="dropdown-child" *ngFor='let prout3 of cat'>
       <ul>
-          <li><button (click)="selectArticleByCategorieId(prout3.id)">{{prout3.nom}}</button></li>
+          <li class="liprincipal" (click)="selectArticleByCategorieId(prout3.id)">{{prout3.nom}}</li>
       </ul>
       </div>
       </div>
+
 
   <div class="widget">
     <div *ngFor='let prout2 of art'>
@@ -32,7 +33,7 @@
           <h1><span class="animation">{{prout2.designation}}</span></h1>
         </div>
 
-        <div><i class='fas fa-trash-alt action' style='font-size:24px' (click)="supprimerArticle(prout2.id)"></i></div>
+        <!-- <div><i class='fas fa-trash-alt action' style='font-size:24px' (click)="supprimerArticle(prout2.id)"></i></div> -->
 
         <div><img class="image" [src]=prout2.image></div>
 
